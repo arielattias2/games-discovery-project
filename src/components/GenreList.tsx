@@ -5,6 +5,7 @@ import GenreItemSkeleton from "./GenreItemSkeleton";
 
 interface Props {
   setGenre: (genre: Genre) => void;
+  currentGenre: Genre | null;
 }
 
 const GenreList = (props: Props) => {
@@ -20,6 +21,7 @@ const GenreList = (props: Props) => {
         {data.map((genre) => (
           <GenreItem
             setGenre={props.setGenre}
+            currentGenre={props.currentGenre}
             key={genre.id}
             genre={genre}
           ></GenreItem>
