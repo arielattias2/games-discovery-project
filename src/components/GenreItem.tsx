@@ -1,16 +1,19 @@
 import React from "react";
 import { Genre } from "../hooks/useGenres";
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { Button, HStack, Image, Text } from "@chakra-ui/react";
 
 interface Props {
   genre: Genre;
+  setGenre: (genre: Genre) => void;
 }
 
-const GenreItem = ({ genre }: Props) => {
+const GenreItem = ({ genre, setGenre }: Props) => {
   return (
     <HStack marginBottom={3}>
       <Image boxSize={"40px"} borderRadius={10} src={genre.image_background} />
-      <Text>{genre.name}</Text>
+      <Button onClick={() => setGenre(genre)} variant={"link"}>
+        {genre.name}
+      </Button>
     </HStack>
   );
 };
