@@ -16,7 +16,17 @@ export interface Game {
   genres: Genre[];
 }
 
-const useGames = (genre: Genre | null) =>
-  useData<Game>("/games", [genre], { params: { genres: genre?.id } });
+const useGames = (
+  genre: Genre | null,
+  platform: Platform | null,
+  sortOrder: String
+) =>
+  useData<Game>("/games", [genre, platform, sortOrder], {
+    params: {
+      genres: genre?.id,
+      parent_platforms: platform?.id,
+      ordering: `${sortOrder}`,
+    },
+  });
 
 export default useGames;
