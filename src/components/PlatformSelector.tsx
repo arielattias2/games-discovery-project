@@ -11,14 +11,11 @@ import { Platform } from "../hooks/useGames";
 import { BsChevronDown } from "react-icons/bs";
 
 interface Props {
-  handleSelectPlatfrom: (p: Platform | null) => void;
+  onSelectPlatform: (p: Platform | null) => void;
   selectedPlatform: Platform | null;
 }
 
-const PlatformSelector = ({
-  handleSelectPlatfrom,
-  selectedPlatform,
-}: Props) => {
+const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
 
   if (error) return null;
@@ -32,7 +29,7 @@ const PlatformSelector = ({
         {data.map((platform) => (
           <MenuItem
             key={platform.id}
-            onClick={() => handleSelectPlatfrom(platform)}
+            onClick={() => onSelectPlatform(platform)}
           >
             {platform.name}
           </MenuItem>

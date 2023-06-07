@@ -4,11 +4,11 @@ import GenreItem from "./GenreItem";
 import GenreItemSkeleton from "./GenreItemSkeleton";
 
 interface Props {
-  setGenre: (genre: Genre) => void;
+  onSelectGenre: (genre: Genre) => void;
   currentGenre: Genre | null;
 }
 
-const GenreList = (props: Props) => {
+const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
@@ -20,8 +20,8 @@ const GenreList = (props: Props) => {
           skeletons.map((skeleton) => <GenreItemSkeleton key={skeleton} />)}
         {data.map((genre) => (
           <GenreItem
-            setGenre={props.setGenre}
-            currentGenre={props.currentGenre}
+            setGenre={onSelectGenre}
+            currentGenre={currentGenre}
             key={genre.id}
             genre={genre}
           ></GenreItem>
