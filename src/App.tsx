@@ -8,6 +8,12 @@ import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/sortSelector";
 
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+  sortOrder: String;
+}
+
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
@@ -43,7 +49,10 @@ function App() {
             ></PlatformSelector>
             <SortSelector
               selectedSort={selectedSort}
-              handleSelectSort={setSelectedSort}
+              handleSelectSort={(s) => {
+                setSelectedSort(s);
+                console.log(s);
+              }}
             />
           </HStack>
           <GameGrid
