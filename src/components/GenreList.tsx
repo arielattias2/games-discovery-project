@@ -1,4 +1,4 @@
-import { Text, UnorderedList } from "@chakra-ui/react";
+import { Heading, Text, UnorderedList } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import GenreItem from "./GenreItem";
 import GenreItemSkeleton from "./GenreItemSkeleton";
@@ -14,6 +14,9 @@ const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
 
   return (
     <>
+      <Heading fontSize={"30px"} marginBottom={3} marginX={2}>
+        Genres
+      </Heading>
       {error && <Text>{error}</Text>}
       <UnorderedList>
         {isLoading &&
