@@ -14,7 +14,7 @@ const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
 
   return (
     <>
-      <Heading fontSize={"30px"} marginBottom={3} marginX={2}>
+      <Heading fontSize={"30px"} marginBottom={4} marginX={2}>
         Genres
       </Heading>
       {error && <Text>{error}</Text>}
