@@ -4,15 +4,14 @@ import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
 interface Props {
-  searchText: String;
   onSearch: (search: String) => void;
 }
 
-const NavBar = ({ searchText, onSearch }: Props) => {
+const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack justifyContent="space-between" padding="10px">
       <Image src={logo} boxSize="60px"></Image>
-      <SearchInput onSearch={onSearch} searchText={searchText}></SearchInput>
+      <SearchInput onSearch={onSearch}></SearchInput>
       <ColorModeSwitch></ColorModeSwitch>
     </HStack>
   );
