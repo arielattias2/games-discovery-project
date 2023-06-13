@@ -3,6 +3,7 @@ using rawg api and implement look like ui
 Showing the video games and can filter them by severl options.
 
 using typescript+react+chakraui
+link to vercel url: https://game-project-silk.vercel.app/
 
 implement:
 - Modern design with chakra
