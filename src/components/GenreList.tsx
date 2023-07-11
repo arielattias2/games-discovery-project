@@ -9,6 +9,7 @@ interface Props {
 }
 
 const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
+  // const { data, error, isLoading } = useGenres();
   const { data, error, isLoading } = useGenres();
   const skeletons = [1, 2, 3, 4, 5, 6];
 
@@ -17,11 +18,11 @@ const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
       <Heading fontSize={"30px"} marginBottom={4} marginX={2}>
         Genres
       </Heading>
-      {error && <Text>{error}</Text>}
+      {error && <Text>{error.message}</Text>}
       <UnorderedList>
         {isLoading &&
           skeletons.map((skeleton) => <GenreItemSkeleton key={skeleton} />)}
-        {data.map((genre) => (
+        {data?.map((genre) => (
           <GenreItem
             setGenre={onSelectGenre}
             currentGenre={currentGenre}
