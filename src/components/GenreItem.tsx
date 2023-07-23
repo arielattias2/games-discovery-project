@@ -4,10 +4,10 @@ import { Button, HStack, Image } from "@chakra-ui/react";
 interface Props {
   genre: Genre;
   setGenre: (genre: Genre) => void;
-  currentGenre: Genre | null;
+  currentGenreId?: number;
 }
 
-const GenreItem = ({ genre, setGenre, currentGenre }: Props) => {
+const GenreItem = ({ genre, setGenre, currentGenreId }: Props) => {
   return (
     <HStack marginBottom={3}>
       <Image
@@ -19,7 +19,7 @@ const GenreItem = ({ genre, setGenre, currentGenre }: Props) => {
       <Button
         whiteSpace={"normal"}
         textAlign="left"
-        fontWeight={currentGenre?.id === genre.id ? "bold" : ""}
+        fontWeight={currentGenreId === genre.id ? "bold" : ""}
         onClick={() => setGenre(genre)}
         variant={"link"}
       >

@@ -5,10 +5,10 @@ import GenreItemSkeleton from "./GenreItemSkeleton";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  currentGenre: Genre | null;
+  currentGenreId?: number;
 }
 
-const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
+const GenreList = ({ currentGenreId, onSelectGenre }: Props) => {
   // const { data, error, isLoading } = useGenres();
   const { data, error, isLoading } = useGenres();
   const skeletons = [1, 2, 3, 4, 5, 6];
@@ -25,7 +25,7 @@ const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
         {data?.results.map((genre) => (
           <GenreItem
             setGenre={onSelectGenre}
-            currentGenre={currentGenre}
+            currentGenreId={currentGenreId}
             key={genre.id}
             genre={genre}
           ></GenreItem>
