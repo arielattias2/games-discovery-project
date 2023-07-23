@@ -22,7 +22,7 @@ const GenreList = ({ currentGenre, onSelectGenre }: Props) => {
       <UnorderedList>
         {isLoading &&
           skeletons.map((skeleton) => <GenreItemSkeleton key={skeleton} />)}
-        {data?.map((genre) => (
+        {data?.results.map((genre) => (
           <GenreItem
             setGenre={onSelectGenre}
             currentGenre={currentGenre}
