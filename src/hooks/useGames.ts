@@ -3,6 +3,7 @@ import { GameQuery } from "./../App";
 import { Genre } from "./useGenres";
 import APIClient, { FetchRes } from "../services/api-client";
 import { Platform } from "./usePlatforms";
+import { toMs } from "ms-typescript";
 
 export interface Game {
   id: number;
@@ -32,7 +33,7 @@ const useGames = (gameQuery: GameQuery) =>
     getNextPageParam: (lasePage, allPages) => {
       return lasePage.next ? allPages.length + 1 : undefined;
     },
-    staleTime: 24 * 60 * 60 * 1000, //24 hours
+    staleTime: toMs("24h"), //24 hours
   });
 
 export default useGames;

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import genres from "../data/genres";
 import APIClient, { FetchRes } from "../services/api-client";
+import { toMs } from "ms-typescript";
 
 const apiClient = new APIClient<Genre>("/genres");
 
@@ -14,7 +15,7 @@ const useGenres = () =>
   useQuery<FetchRes<Genre>, Error>({
     queryKey: ["genres"],
     queryFn: apiClient.getAll,
-    staleTime: 24 * 60 * 60 * 1000, //24 hours
+    staleTime: toMs("24h"), //24 hours
     initialData: genres,
   });
 export default useGenres;
