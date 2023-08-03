@@ -19,6 +19,12 @@ const SearchInput = () => {
       <InputGroup>
         <InputLeftElement children={<FaSearch />}></InputLeftElement>
         <Input
+          width={[
+            "120px", // 62em+
+            "250px", // 48em-62em
+            "500px", // 30em-48em
+            "700px", // 0-30em
+          ]}
           ref={ref}
           borderRadius={20}
           variant={"filled"}
