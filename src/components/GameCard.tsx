@@ -12,7 +12,7 @@ import {
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCropedImageUrl from "../services/image-url";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface Props {
   game: Game;
@@ -24,13 +24,13 @@ const GameCard = ({ game }: Props) => {
   return (
     <>
       <LinkBox>
-        <Card
-          onClick={() => navigate(`/games/${game.name.replace("%20", " ")}`)}
-        >
+        <Card>
           <Image src={getCropedImageUrl(game.background_image)} />
 
           <CardBody>
-            <Heading fontSize="2xl">{game.name}</Heading>
+            <Link to={"/games/" + game.slug}>
+              <Heading fontSize="2xl">{game.name}</Heading>
+            </Link>
             <HStack justifyContent={"space-between"}>
               <PlatformIconList
                 platforms={

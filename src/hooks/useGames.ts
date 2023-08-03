@@ -7,11 +7,13 @@ import useGameQueryStore from "../store";
 
 export interface Game {
   id: number;
+  slug: string;
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
   genres: Genre[];
+  description_raw: string;
 }
 
 const apiClient = new APIClient<Game>("/games");
