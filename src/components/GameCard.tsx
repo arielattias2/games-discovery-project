@@ -1,4 +1,3 @@
-import { Game } from "../hooks/useGames";
 import {
   Card,
   CardBody,
@@ -6,21 +5,19 @@ import {
   Heading,
   Image,
   LinkBox,
-  LinkOverlay,
 } from "@chakra-ui/react";
+import { Game } from "../entities/Game";
 
-import PlatformIconList from "./PlatformIconList";
-import CriticScore from "./CriticScore";
+import { Link } from "react-router-dom";
 import getCropedImageUrl from "../services/image-url";
-import { Link, useNavigate } from "react-router-dom";
+import CriticScore from "./CriticScore";
+import PlatformIconList from "./PlatformIconList";
 
 interface Props {
   game: Game;
 }
 
 const GameCard = ({ game }: Props) => {
-  const navigate = useNavigate();
-
   return (
     <>
       <LinkBox>
