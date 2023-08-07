@@ -27,7 +27,7 @@ const GameDetailPage = () => {
 
       <GameDetailes game={game}></GameDetailes>
       <GameTrailer gameSlug={game.slug}></GameTrailer>
-      <GameScreenshots game={game}></GameScreenshots>
+      <GameScreenshots gameSlug={game.slug}></GameScreenshots>
     </>
   );
 };

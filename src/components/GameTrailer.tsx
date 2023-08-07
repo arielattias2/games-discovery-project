@@ -1,6 +1,5 @@
-import ReactPlayer from "react-player";
-import useGameTrailer from "../hooks/useGameTrailer";
 import { Spinner } from "@chakra-ui/react";
+import useGameTrailer from "../hooks/useGameTrailer";
 
 interface Props {
   gameSlug: string;
@@ -18,17 +17,17 @@ const GameTrailer = ({ gameSlug }: Props) => {
 
   return first ? (
     <>
-      {/* <video src={first.data[480]} poster={first.preview} controls /> */}
-      <div className="player-video">
-        <ReactPlayer
-          url={first.data[480]}
-          light={first.preview}
-          playing={true}
-          controls
-          width="100%"
-          height="100%"
-        />
-      </div>
+      <video src={first.data[480]} poster={first.preview} controls />
+      {/* <div className="player-video"> */}
+      {/* <ReactPlayer
+        url={first.data[480]}
+        light={first.preview}
+        playing={true}
+        controls
+        width="100%"
+        height="100%"
+      /> */}
+      {/* </div> */}
     </>
   ) : null;
 };
