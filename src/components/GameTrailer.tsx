@@ -19,26 +19,18 @@ const GameTrailer = ({ gameSlug }: Props) => {
   return first ? (
     <>
       {/* <video src={first.data[480]} poster={first.preview} controls /> */}
-      <ReactPlayer
-        url={first.data[480]}
-        light={first.preview}
-        playing={true}
-        controls
-      />
+      <div className="player-video">
+        <ReactPlayer
+          url={first.data[480]}
+          light={first.preview}
+          playing={true}
+          controls
+          width="100%"
+          height="100%"
+        />
+      </div>
     </>
   ) : null;
-
-  // if (!first) return null;
-
-  // const url = first.data[480];
-  // const preview = first.preview;
-  // console.log(url);
-  // return (
-  //   <>
-  //     <video src={url} poster={preview} controls></video>
-  //     {/* <ReactPlayer url={url}></ReactPlayer> */}
-  //   </>
-  // );
 };
 
 export default GameTrailer;
