@@ -4,8 +4,8 @@ interface Props {
   game: Game;
 }
 
-const GameScreenshots = () => {
-  return <div>GameScreenshots</div>;
+const GameScreenshots = ({ game }: Props) => {
+  return <div>GameScreenshots {game.id} </div>;
 };
 
 export default GameScreenshots;

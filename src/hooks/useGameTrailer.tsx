@@ -1,15 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import { toMs } from "ms-typescript";
-import { GameTrailer } from "../entities/GameTrailer";
-import { Genre } from "../entities/Genre";
+import { Trailer } from "../entities/Trailer";
 import APIClient, { FetchRes } from "../services/api-client";
 
-const apiClient = new APIClient<Genre>("/games/movies");
-
 const useGameTrailer = (slug: string) => {
-  return useQuery<FetchRes<GameTrailer>, Error>({
-    queryKey: [`/games/movies/${slug}`],
-    queryFn: () => apiClient.get(slug),
+  const apiClient = new APIClient<Trailer>(`/games/${slug}/movies`);
+
+  return useQuery<FetchRes<Trailer>, Error>({
+    queryKey: ["trailers", slug],
+    queryFn: apiClient.getAll,
     staleTime: toMs("24h"), //24 hours
   });
 };
