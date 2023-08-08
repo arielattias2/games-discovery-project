@@ -16,24 +16,12 @@ const GameTrailer = ({ gameSlug }: Props) => {
   const first = data?.results[0];
 
   return first ? (
-    <>
-      <video
-        src={first.data[480]}
-        poster={first.preview}
-        controls
-        style={{ width: "100%", height: "100%" }}
-      />
-      {/* <div className="player-video"> */}
-      {/* <ReactPlayer
-        url={first.data[480]}
-        light={first.preview}
-        playing={true}
-        controls
-        width="100%"
-        height="100%"
-      /> */}
-      {/* </div> */}
-    </>
+    <video
+      src={first.data[480]}
+      poster={first.preview}
+      controls
+      style={{ width: "100%" }}
+    />
   ) : null;
 };
 
