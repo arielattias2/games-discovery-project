@@ -6,7 +6,7 @@ import {
   Image,
   LinkBox,
 } from "@chakra-ui/react";
-import { Game } from "../entities/Game";
+import Game from "../entities/Game";
 
 import { Link } from "react-router-dom";
 import getCropedImageUrl from "../services/image-url";

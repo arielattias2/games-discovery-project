@@ -1,4 +1,4 @@
-import { Genre } from "../entities/Genre";
+import Genre from "../entities/Genre";
 import { Button, HStack, Image } from "@chakra-ui/react";
 import useGameQueryStore from "../store";
 

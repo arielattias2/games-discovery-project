@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { toMs } from "ms-typescript";
-import { Trailer } from "../entities/Trailer";
+import Trailer from "../entities/Trailer";
 import APIClient, { FetchRes } from "../services/api-client";
 
 const useGameTrailer = (slug: string) => {
