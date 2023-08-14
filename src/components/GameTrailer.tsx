@@ -12,7 +12,6 @@ const GameTrailer = ({ gameSlug }: Props) => {
 
   if (error) return null;
 
-  console.log(data?.results);
   const first = data?.results[0];
 
   return first ? (
