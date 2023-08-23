@@ -19,14 +19,14 @@ const GenreItem = ({ genre }: Props) => {
         src={genre.image_background}
       />
       <Button
-        whiteSpace={"normal"}
         textAlign="left"
         fontWeight={currentGenreId === genre.id ? "bold" : ""}
         onClick={() => setGenreId(genre.id)}
         variant={"link"}
         overflow="hidden"
         textOverflow="ellipsis"
-        display="-webkit-box"
+        display="block"
+        whiteSpace={"nowrap"}
       >
         {genre.name}
       </Button>
