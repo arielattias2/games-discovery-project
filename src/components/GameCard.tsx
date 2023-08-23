@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardBody,
-  HStack,
-  Heading,
-  Image,
-  LinkBox,
-} from "@chakra-ui/react";
+import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
 import Game from "../entities/Game";
 
 import { Link } from "react-router-dom";
