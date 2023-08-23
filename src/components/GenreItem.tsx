@@ -24,6 +24,9 @@ const GenreItem = ({ genre }: Props) => {
         fontWeight={currentGenreId === genre.id ? "bold" : ""}
         onClick={() => setGenreId(genre.id)}
         variant={"link"}
+        overflow="hidden"
+        textOverflow="ellipsis"
+        display="-webkit-box"
       >
         {genre.name}
       </Button>

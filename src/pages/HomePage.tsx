@@ -16,8 +16,7 @@ const HomePage = () => {
         }}
       >
         <Show above="md">
-          <GridItem area={"aside"} paddingX={1}>
-            <Text marginX={4} marginBottom={2} fontSize={"20px"}></Text>
+          <GridItem area={"aside"} paddingX={1} position="sticky" zIndex={900}>
             <GenreList></GenreList>
           </GridItem>
         </Show>
